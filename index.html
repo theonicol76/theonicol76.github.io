@@ -69,66 +69,31 @@
 
     p { color: var(--text-main); }
 
-    /* ── Damier ── */
-    .checker {
-      display: flex;
-      height: 32px;
-      overflow: hidden;
-      line-height: 0;
-    }
-    .checker-inner {
-      display: flex;
-      flex-shrink: 0;
-      animation: checker-scroll 18s linear infinite;
-    }
-    .checker-cell {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-    .checker-cell:nth-child(odd)  { background: var(--brand-green); }
-    .checker-cell:nth-child(even) { background: #fff; }
-    /* rangée 2 inversée */
-    .checker-row2 .checker-cell:nth-child(odd)  { background: #fff; }
-    .checker-row2 .checker-cell:nth-child(even) { background: var(--brand-green); }
-
-    @keyframes checker-scroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Damier — bande pleine largeur */
+    /* ── Damier statique ── */
     .checker-band {
       width: 100%;
-      background: transparent;
+      height: 48px;          /* 2 rangées × 24px */
+      background-image:
+        /* rangée haute : carré vert en position 0, blanc en 24 */
+        linear-gradient(to right,
+          var(--brand-green) 0px, var(--brand-green) 24px,
+          transparent       24px, transparent      48px),
+        /* rangée basse : décalée d'un carré */
+        linear-gradient(to right,
+          transparent       0px, transparent      24px,
+          var(--brand-green) 24px, var(--brand-green) 48px);
+      background-size: 48px 24px;   /* tuile = 2 carrés en largeur, 1 rangée en hauteur */
+      background-position: 0 0, 0 24px;
+      background-repeat: repeat-x;
+      background-color: #fff;
       display: block;
-    }
-
-    /* Petit damier accent à côté d'un titre */
-    .checker-accent {
-      display: inline-flex;
-      flex-direction: column;
-      gap: 0;
-      vertical-align: middle;
-      margin-right: 0.6rem;
       flex-shrink: 0;
     }
-    .checker-accent-row {
-      display: flex;
-    }
-    .checker-accent-cell {
-      width: 8px;
-      height: 8px;
-    }
-    .checker-accent-cell.g { background: var(--brand-green); }
-    .checker-accent-cell.w { background: transparent; border: 1px solid var(--brand-green); }
 
-    /* Section heading avec accent */
-    .section-heading-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
+    /* Petit damier accent (supprimé de l'usage mais garde la classe au cas où) */
+    .checker-accent { display: none; }
+    .section-heading-wrap { display: block; }
+
 
     a { text-decoration: none; color: inherit; }
     img { display: block; }
@@ -1363,16 +1328,7 @@
   </section>
 
   <!-- DAMIER après hero -->
-  <div class="checker-band" aria-hidden="true">
-    <div class="checker">
-      <div class="checker-inner" id="checkerRow1"></div>
-      <div class="checker-inner" id="checkerRow1b"></div>
-    </div>
-    <div class="checker" style="margin-top:0;">
-      <div class="checker-inner checker-row2" id="checkerRow2"></div>
-      <div class="checker-inner checker-row2" id="checkerRow2b"></div>
-    </div>
-  </div>
+  <div class="checker-band" aria-hidden="true"></div>
 
   <!-- CLIENTS -->
   <div class="clients-section" style="background:var(--bg-white); border-bottom:1px solid var(--border);">
@@ -1401,17 +1357,7 @@
     <div class="max-w-7xl px-container">
       <div class="text-center">
         <span class="section-label">Nos Solutions</span>
-        <div class="section-heading-wrap" style="justify-content:center; margin-bottom:0.25rem;">
-          <span class="checker-accent" aria-hidden="true">
-            <span class="checker-accent-row"><span class="checker-accent-cell g"></span><span class="checker-accent-cell w"></span><span class="checker-accent-cell g"></span></span>
-            <span class="checker-accent-row"><span class="checker-accent-cell w"></span><span class="checker-accent-cell g"></span><span class="checker-accent-cell w"></span></span>
-          </span>
-          <h2 style="font-size:clamp(1.75rem,5vw,3rem); color:var(--text-heading);">Une offre complète pour votre entreprise</h2>
-          <span class="checker-accent" aria-hidden="true" style="margin-right:0; margin-left:0.6rem;">
-            <span class="checker-accent-row"><span class="checker-accent-cell g"></span><span class="checker-accent-cell w"></span><span class="checker-accent-cell g"></span></span>
-            <span class="checker-accent-row"><span class="checker-accent-cell w"></span><span class="checker-accent-cell g"></span><span class="checker-accent-cell w"></span></span>
-          </span>
-        </div>
+        <h2 style="font-size:clamp(1.75rem,5vw,3rem); color:var(--text-heading);">Une offre complète pour votre entreprise</h2>
       </div>
       <div class="solutions-grid">
         <div class="solution-card featured">
@@ -1507,17 +1453,7 @@
     <div class="max-w-7xl px-container">
       <div class="text-center">
         <span class="section-label" style="color:#a3d9a5;">Pourquoi Nous Choisir</span>
-        <div class="section-heading-wrap" style="justify-content:center; flex-wrap:wrap; gap:0.5rem;">
-          <span class="checker-accent" aria-hidden="true">
-            <span class="checker-accent-row"><span class="checker-accent-cell" style="background:#fff; width:8px;height:8px;"></span><span class="checker-accent-cell" style="background:transparent;border:1px solid rgba(255,255,255,0.4);width:8px;height:8px;"></span><span class="checker-accent-cell" style="background:#fff;width:8px;height:8px;"></span></span>
-            <span class="checker-accent-row"><span class="checker-accent-cell" style="background:transparent;border:1px solid rgba(255,255,255,0.4);width:8px;height:8px;"></span><span class="checker-accent-cell" style="background:#fff;width:8px;height:8px;"></span><span class="checker-accent-cell" style="background:transparent;border:1px solid rgba(255,255,255,0.4);width:8px;height:8px;"></span></span>
-          </span>
-          <h2 style="font-size:clamp(1.75rem,5vw,3rem); color:#fff;">Un partenaire de confiance</h2>
-          <span class="checker-accent" aria-hidden="true" style="margin-right:0; margin-left:0.4rem;">
-            <span class="checker-accent-row"><span class="checker-accent-cell" style="background:#fff;width:8px;height:8px;"></span><span class="checker-accent-cell" style="background:transparent;border:1px solid rgba(255,255,255,0.4);width:8px;height:8px;"></span><span class="checker-accent-cell" style="background:#fff;width:8px;height:8px;"></span></span>
-            <span class="checker-accent-row"><span class="checker-accent-cell" style="background:transparent;border:1px solid rgba(255,255,255,0.4);width:8px;height:8px;"></span><span class="checker-accent-cell" style="background:#fff;width:8px;height:8px;"></span><span class="checker-accent-cell" style="background:transparent;border:1px solid rgba(255,255,255,0.4);width:8px;height:8px;"></span></span>
-          </span>
-        </div>
+        <h2 style="font-size:clamp(1.75rem,5vw,3rem); color:#fff; margin-bottom:4rem;">Un partenaire de confiance</h2>
       </div>
       <div class="why-grid">
         <div class="why-card">
@@ -2083,16 +2019,7 @@
 </div>
 
 <!-- DAMIER avant footer -->
-<div class="checker-band" aria-hidden="true">
-  <div class="checker">
-    <div class="checker-inner" id="checkerRow3"></div>
-    <div class="checker-inner" id="checkerRow3b"></div>
-  </div>
-  <div class="checker">
-    <div class="checker-inner checker-row2" id="checkerRow4"></div>
-    <div class="checker-inner checker-row2" id="checkerRow4b"></div>
-  </div>
-</div>
+<div class="checker-band" aria-hidden="true"></div>
 
 <!-- ===== FOOTER ===== -->
 <footer>
@@ -2146,20 +2073,6 @@
 </footer>
 
 <script>
-  // ===== DAMIER =====
-  function buildCheckerRow(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const count = Math.ceil(window.innerWidth / 16) * 2 + 4;
-    for (let i = 0; i < count; i++) {
-      const cell = document.createElement('div');
-      cell.className = 'checker-cell';
-      el.appendChild(cell);
-    }
-  }
-  ['checkerRow1','checkerRow1b','checkerRow2','checkerRow2b',
-   'checkerRow3','checkerRow3b','checkerRow4','checkerRow4b'].forEach(buildCheckerRow);
-
   // ===== NAVIGATION =====
   const pages = ['accueil','solutions','apropos','contact','frigo'];
 
