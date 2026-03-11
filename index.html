@@ -200,7 +200,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      background-image: url('https://i.imgur.com/P8AIoni.jpeg');
       background-size: cover;
       background-position: center;
     }
@@ -246,7 +246,7 @@
 
     .hero h1 em {
       font-style: italic;
-      color: var(--green-400);
+      color: #fff;
     }
 
     .hero-sub {
@@ -378,6 +378,7 @@
       transition: filter 0.3s;
     }
     .marquee-item img:hover { filter: grayscale(0%) opacity(1); }
+    .marquee-item img.logo-abeille { height: 64px; }
 
     /* ===== SECTION COMMONS ===== */
     section { padding: 5rem 1rem; }
@@ -800,23 +801,23 @@
     }
 
     .vision-stat {
-      background: #fff;
+      background: #004A05;
       border-radius: 0.75rem;
       padding: 1.5rem;
-      border: 1px solid var(--gray-200);
+      border: none;
     }
 
     .vision-stat .num {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--green-700);
+      color: #fff;
       font-family: 'DM Sans', sans-serif;
       margin-bottom: 0.25rem;
     }
 
     .vision-stat .label {
       font-size: 0.875rem;
-      color: var(--gray-500);
+      color: rgba(255,255,255,0.75);
     }
 
     .exigence-grid {
@@ -1139,17 +1140,17 @@
     <p class="clients-label">Ils nous font confiance</p>
     <div class="marquee-wrap">
       <div class="marquee-track">
-        <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/j0l6efff_abeille%20logo.jpg" alt="Abeille Assurances" /></div>
+        <div class="marquee-item"><img class="logo-abeille" src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/j0l6efff_abeille%20logo.jpg" alt="Abeille Assurances" /></div>
         <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/d2ma1qlh_alstom%20logo.png" alt="Alstom" /></div>
         <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/kht4kxyi_groupe%20frameip.png" alt="Groupe Frameip" /></div>
-        <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/j0l6efff_abeille%20logo.jpg" alt="Abeille Assurances" /></div>
+        <div class="marquee-item"><img class="logo-abeille" src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/j0l6efff_abeille%20logo.jpg" alt="Abeille Assurances" /></div>
         <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/d2ma1qlh_alstom%20logo.png" alt="Alstom" /></div>
         <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/kht4kxyi_groupe%20frameip.png" alt="Groupe Frameip" /></div>
         <!-- duplicate for infinite loop -->
-        <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/j0l6efff_abeille%20logo.jpg" alt="Abeille Assurances" /></div>
+        <div class="marquee-item"><img class="logo-abeille" src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/j0l6efff_abeille%20logo.jpg" alt="Abeille Assurances" /></div>
         <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/d2ma1qlh_alstom%20logo.png" alt="Alstom" /></div>
         <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/kht4kxyi_groupe%20frameip.png" alt="Groupe Frameip" /></div>
-        <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/j0l6efff_abeille%20logo.jpg" alt="Abeille Assurances" /></div>
+        <div class="marquee-item"><img class="logo-abeille" src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/j0l6efff_abeille%20logo.jpg" alt="Abeille Assurances" /></div>
         <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/d2ma1qlh_alstom%20logo.png" alt="Alstom" /></div>
         <div class="marquee-item"><img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/kht4kxyi_groupe%20frameip.png" alt="Groupe Frameip" /></div>
       </div>
@@ -1211,12 +1212,12 @@
       <div class="two-col">
         <div>
           <span class="section-label">Notre Cuisine</span>
-          <h2 style="font-size:clamp(1.75rem,5vw,3rem); color:var(--gray-900); margin-bottom:1.5rem;">Le goût de <em style="font-style:italic;color:var(--green-500);">l'authenticité</em></h2>
-          <p style="color:var(--gray-500); font-size:1rem; line-height:1.7; margin-bottom:2.5rem;">Chez La Cuisine de Jeanine, chaque plat est préparé avec passion et savoir-faire. Nous privilégions les produits frais, les viandes françaises et le respect de la saisonnalité.</p>
+          <h2 style="font-size:clamp(1.75rem,5vw,3rem); color:var(--gray-900); margin-bottom:1.5rem;">Le goût de <em style="font-style:italic;color:#004A05;">l'authenticité</em></h2>
+          <p style="color:var(--gray-500); font-size:1rem; line-height:1.7; margin-bottom:2.5rem;">Chez La Cuisine de Jeanine, chaque plat est préparé avec passion et savoir-faire. Nous privilégions les produits frais et les viandes françaises.</p>
           <div class="cuisine-features">
             <div class="cuisine-feature">
               <div class="cuisine-feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0v10"/></svg></div>
-              <div><div class="cuisine-feature-title">Fait maison</div><div class="cuisine-feature-sub">Cuisine préparée sur place</div></div>
+              <div><div class="cuisine-feature-title">Fait maison</div><div class="cuisine-feature-sub">Et avec passion !</div></div>
             </div>
             <div class="cuisine-feature">
               <div class="cuisine-feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8C8 10 5.9 16.17 3.82 19.82A2 2 0 0 0 5.56 22h12.88a2 2 0 0 0 1.74-2.18C19.61 16.17 17.5 10 17 8z"/></svg></div>
@@ -1228,7 +1229,7 @@
             </div>
             <div class="cuisine-feature">
               <div class="cuisine-feature-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-              <div><div class="cuisine-feature-title">De saison</div><div class="cuisine-feature-sub">Respect du cycle naturel</div></div>
+              <div><div class="cuisine-feature-title">Quotidien</div><div class="cuisine-feature-sub">Livraison quotidienne</div></div>
             </div>
           </div>
           <div class="menu-box-dark">
@@ -1243,10 +1244,6 @@
         </div>
         <div class="cuisine-img-wrap">
           <img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/u3ala5dr_le%20gout%20de%20l%27authenticit%C3%A9.png" alt="Notre cuisine" />
-          <div class="experience-badge">
-            <div class="num">15+</div>
-            <div class="label">ans d'expérience</div>
-          </div>
         </div>
       </div>
     </div>
@@ -1334,7 +1331,6 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Accès 24h/24, 7j/7</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Produits frais renouvelés quotidiennement</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Paiement par badge ou carte bancaire</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Gestion des stocks automatisée</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Installation et maintenance incluses</li>
           </ul>
           <button class="btn-green" onclick="navigate('contact')">
@@ -1358,7 +1354,7 @@
         </div>
         <div>
           <h2 style="font-size:clamp(1.75rem,5vw,3rem); color:var(--gray-900); margin-bottom:1.5rem;">Plateaux Repas</h2>
-          <p style="color:var(--gray-500); font-size:1rem; line-height:1.7; margin-bottom:2rem;">Des repas complets, équilibrés et savoureux livrés directement dans votre entreprise. Notre menu change chaque semaine pour varier les plaisirs.</p>
+          <p style="color:var(--gray-500); font-size:1rem; line-height:1.7; margin-bottom:2rem;">Pas encore équipé d'un frigo connecté ? Aucun problème, notre équipe vous livre des repas complets, équilibrés et savoureux directement dans votre entreprise. Notre menu change chaque semaine pour varier les plaisirs.</p>
           <div class="menu-box-light">
             <h4>Menu hebdomadaire type</h4>
             <div class="menu-stats menu-stat-green">
@@ -1502,7 +1498,7 @@
         <div class="exigence-card">
           <div class="exigence-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8C8 10 5.9 16.17 3.82 19.82A2 2 0 0 0 5.56 22h12.88a2 2 0 0 0 1.74-2.18C19.61 16.17 17.5 10 17 8z"/></svg></div>
           <h3>Produits frais</h3>
-          <p>Sélection rigoureuse de produits frais et de saison auprès de fournisseurs locaux.</p>
+          <p>Sélection rigoureuse de produits frais auprès de nos fournisseurs.</p>
         </div>
         <div class="exigence-card">
           <div class="exigence-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
