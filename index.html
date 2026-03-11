@@ -1071,6 +1071,115 @@
     .text-center { text-align: center; }
     .mt-16 { margin-top: 4rem; }
     .hidden { display: none; }
+
+    /* ===== SOCIAL ICONS NAV ===== */
+    .nav-socials {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      margin-right: 0.5rem;
+    }
+    @media(min-width:768px){ .nav-socials { display: flex; } }
+
+    .nav-social-link {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--green-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #004A05;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .nav-social-link:hover { background: #004A05; color: #fff; }
+
+    /* ===== FOOTER SOCIALS ===== */
+    .footer-socials {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .footer-social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .footer-social-link:hover { background: #004A05; color: #fff; }
+
+    /* ===== SECTION COLORÉE accueil ===== */
+    .section-cream { background: #f7f4ee; }
+    .section-green-pale { background: #eef5ee; }
+    .section-dark-green { background: #004A05; }
+    .section-dark-green .section-label { color: #a3d9a5; }
+    .section-dark-green h2 { color: #fff !important; }
+    .section-dark-green p { color: rgba(255,255,255,0.75) !important; }
+    .section-dark-green .why-card { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.12); }
+    .section-dark-green .why-card:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.1); }
+    .section-dark-green .why-card h3 { color: #fff; }
+    .section-dark-green .why-card p { color: rgba(255,255,255,0.65) !important; }
+    .section-dark-green .icon-container { background: rgba(255,255,255,0.12); color: #a3d9a5; }
+
+    /* ===== PAGE FRIGO ===== */
+    .frigo-page-header {
+      background: linear-gradient(135deg, #004A05 0%, #1a6b1f 60%, #2d8a34 100%);
+      padding: 5rem 1.5rem 6rem;
+    }
+    @media(min-width:768px){ .frigo-page-header { padding: 7rem 2rem; } }
+
+    .frigo-page-header .section-label { color: #a3d9a5; }
+    .frigo-page-header h1 { color: #fff; font-size: clamp(2rem,6vw,3.75rem); max-width:48rem; line-height:1.1; margin-bottom:1.5rem; }
+    .frigo-page-header p { color: rgba(255,255,255,0.8); font-size:1.1rem; max-width:40rem; line-height:1.7; }
+
+    .frigo-features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+    }
+    @media(min-width:640px){ .frigo-features-grid { grid-template-columns: 1fr 1fr; } }
+
+    .frigo-feature-card {
+      background: var(--green-50);
+      border: 1px solid #bbf7d0;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .frigo-feature-icon {
+      width: 44px;
+      height: 44px;
+      background: #004A05;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .frigo-feature-card h4 { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:700; color:var(--gray-900); margin-bottom:0.25rem; }
+    .frigo-feature-card p { font-size:0.82rem; color:var(--gray-500); line-height:1.6; }
+
+    /* about sections */
+    .about-section-alt { background: #eef5ee; }
+    .about-section-dark { background: #1a1a1a; }
+    .about-section-dark h2 { color: #fff !important; }
+    .about-section-dark p { color: rgba(255,255,255,0.65) !important; }
+    .about-section-dark .exigence-card h3 { color: #fff; }
+    .about-section-dark .exigence-icon { background: rgba(255,255,255,0.08); color: #a3d9a5; }
   </style>
 </head>
 <body>
@@ -1087,6 +1196,17 @@
         <button class="nav-link active" id="nav-accueil" onclick="navigate('accueil')">Accueil</button>
         <button class="nav-link" id="nav-solutions" onclick="navigate('solutions')">Nos Solutions</button>
         <button class="nav-link" id="nav-apropos" onclick="navigate('apropos')">À Propos</button>
+        <div class="nav-socials">
+          <a href="https://www.instagram.com/lacuisinedejeanine/" target="_blank" class="nav-social-link" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/p/La-Cuisine-de-Jeanine-61559807420124/" target="_blank" class="nav-social-link" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/la-cuisine-de-jeanine" target="_blank" class="nav-social-link" title="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
         <button class="nav-cta" onclick="navigate('contact')">Contactez-nous</button>
       </div>
       <button class="nav-mobile-btn" onclick="toggleMobile()" id="mobileBtn">
@@ -1109,7 +1229,7 @@
 <div class="page active" id="page-accueil">
 
   <!-- HERO -->
-  <section style="padding:0; position:relative; min-height:90vh; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+  <section style="padding:0; position:relative; min-height:65vh; display:flex; align-items:center; justify-content:center; overflow:hidden;">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -1158,7 +1278,7 @@
   </div>
 
   <!-- SOLUTIONS -->
-  <section style="background:#fff;">
+  <section style="background:#f7f4ee;">
     <div class="max-w-7xl px-container">
       <div class="text-center">
         <span class="section-label">Nos Solutions</span>
@@ -1244,13 +1364,17 @@
         </div>
         <div class="cuisine-img-wrap">
           <img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/u3ala5dr_le%20gout%20de%20l%27authenticit%C3%A9.png" alt="Notre cuisine" />
+          <div class="experience-badge">
+            <div class="num">+200</div>
+            <div class="label">recettes par an</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- POURQUOI NOUS CHOISIR -->
-  <section style="background:#fff;">
+  <section class="section-dark-green">
     <div class="max-w-7xl px-container">
       <div class="text-center">
         <span class="section-label">Pourquoi Nous Choisir</span>
@@ -1336,6 +1460,10 @@
           <button class="btn-green" onclick="navigate('contact')">
             Demander une étude personnalisée
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <button onclick="navigate('frigo')" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1rem;padding:0.75rem 1.75rem;background:#004A05;color:#fff;border:none;border-radius:9999px;font-size:0.9rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+            En savoir +
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
         <div class="solution-full-img">
@@ -1463,7 +1591,7 @@
   </section>
 
   <!-- VISION -->
-  <section style="background:var(--gray-50);">
+  <section style="background:#eef5ee;">
     <div class="max-w-7xl px-container">
       <div class="two-col">
         <div class="solution-full-img order-first">
@@ -1491,7 +1619,7 @@
   </section>
 
   <!-- EXIGENCE -->
-  <section style="background:#fff;">
+  <section class="section-dark-green">
     <div class="max-w-7xl px-container">
       <h2 style="font-size:clamp(1.75rem,5vw,3rem); color:var(--gray-900); text-align:center;">Notre exigence produit</h2>
       <div class="exigence-grid">
@@ -1628,6 +1756,95 @@
 
 </div><!-- end flex -->
 
+<!-- ==================== PAGE FRIGO CONNECTÉ ==================== -->
+<div class="page" id="page-frigo">
+
+  <div class="frigo-page-header">
+    <div class="max-w-7xl px-container">
+      <span class="section-label">Nos Solutions · Solution Phare</span>
+      <h1>Le Frigo Connecté</h1>
+      <p>La cantine digitale nouvelle génération. Une solution clé en main pour offrir à vos collaborateurs une restauration de qualité, accessible à toute heure.</p>
+    </div>
+  </div>
+
+  <!-- PRÉSENTATION PRINCIPALE -->
+  <section style="background:#fff;">
+    <div class="max-w-7xl px-container">
+      <div class="two-col">
+        <div>
+          <span class="section-label">Comment ça marche ?</span>
+          <h2 style="font-size:clamp(1.75rem,4vw,2.5rem); color:var(--gray-900); margin-bottom:1.25rem;">Un frigo intelligent dans vos locaux</h2>
+          <p style="color:var(--gray-500); font-size:1rem; line-height:1.8; margin-bottom:2rem;">Nous installons un frigo connecté directement dans vos bureaux ou vos espaces communs. Chaque matin, notre équipe l'approvisionne en plats frais cuisinés maison, en snacking et en boissons. Vos collaborateurs n'ont plus qu'à se servir quand ils le souhaitent.</p>
+          <div class="frigo-features-grid">
+            <div class="frigo-feature-card">
+              <div class="frigo-feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div><h4>Accès 24h/24, 7j/7</h4><p>Vos équipes mangent à leur rythme, pas au nôtre.</p></div>
+            </div>
+            <div class="frigo-feature-card">
+              <div class="frigo-feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 0v10"/></svg></div>
+              <div><h4>Produits frais quotidiens</h4><p>Renouvelés chaque matin, jamais de repas réchauffés.</p></div>
+            </div>
+            <div class="frigo-feature-card">
+              <div class="frigo-feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+              <div><h4>Paiement simplifié</h4><p>Par badge entreprise ou carte bancaire directement.</p></div>
+            </div>
+            <div class="frigo-feature-card">
+              <div class="frigo-feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+              <div><h4>Installation & maintenance</h4><p>On s'occupe de tout, vous n'avez rien à gérer.</p></div>
+            </div>
+          </div>
+          <button class="btn-green" onclick="navigate('contact')" style="background:#004A05;">
+            Demander une étude personnalisée
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+        <div class="solution-full-img">
+          <img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/w5furs7q_frigo%20photo.jpg" alt="Frigo connecté" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVANTAGES -->
+  <section style="background:#eef5ee;">
+    <div class="max-w-7xl px-container text-center">
+      <span class="section-label">Pourquoi le frigo connecté ?</span>
+      <h2 style="font-size:clamp(1.75rem,4vw,2.5rem); color:var(--gray-900); margin-bottom:1rem;">La solution idéale pour votre entreprise</h2>
+      <p style="color:var(--gray-500); max-width:40rem; margin:0 auto 3rem; font-size:1rem; line-height:1.7;">Plus besoin de sortir déjeuner, de commander à l'avance ou de se soucier de la logistique. Tout est là, frais, fait maison et disponible quand vous en avez besoin.</p>
+      <div class="why-grid" style="margin-top:0;">
+        <div class="why-card">
+          <div class="icon-container"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Bien-être collaborateur</h3>
+          <p>Un repas de qualité sur place améliore la satisfaction et la productivité de vos équipes.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-container"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <h3>Zéro contrainte</h3>
+          <p>Installation, approvisionnement, maintenance : on gère tout de A à Z.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon-container"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Adaptable à votre budget</h3>
+          <p>Subvention employeur possible. Nous construisons une offre sur-mesure selon votre structure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="max-w-7xl px-container text-center">
+      <h2>Prêt à transformer la pause déjeuner de vos équipes ?</h2>
+      <p>Cette page sera enrichie prochainement. En attendant, contactez-nous pour en savoir plus sur notre offre Frigo Connecté.</p>
+      <button class="btn-white" onclick="navigate('contact')">
+        Contactez-nous
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </section>
+
+</div>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="max-w-7xl">
@@ -1638,6 +1855,17 @@
           <span class="footer-logo-name">La Cuisine de Jeanine</span>
         </div>
         <p class="footer-desc">Le traiteur nouvelle génération pour les entreprises. Cantine digitale, frigo connecté et prestations sur-mesure.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/lacuisinedejeanine/" target="_blank" class="footer-social-link" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/p/La-Cuisine-de-Jeanine-61559807420124/" target="_blank" class="footer-social-link" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/la-cuisine-de-jeanine" target="_blank" class="footer-social-link" title="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
@@ -1670,7 +1898,7 @@
 
 <script>
   // ===== NAVIGATION =====
-  const pages = ['accueil','solutions','apropos','contact'];
+  const pages = ['accueil','solutions','apropos','contact','frigo'];
 
   function navigate(page) {
     pages.forEach(p => {
