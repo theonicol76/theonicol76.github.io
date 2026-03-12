@@ -18,12 +18,23 @@
       --green-h:     #16481b;
       --green-lite:  #edf7ee;
       --dark:        #111111;
-      --dark-section: #152215;
+      --dark-section:#152215;
       --gray-text:   #4a4a4a;
       --gray-sub:    #6b7280;
       --gray-bg:     #f7f7f5;
       --border:      #e5e7eb;
       --white:       #ffffff;
+
+      /* compat */
+      --green-950:#052e16; --green-900:#1e5e24; --green-800:#1e5e24;
+      --green-700:#1e5e24; --green-600:#3a8c3f; --green-500:#4caf50;
+      --green-400:#81c784; --green-100:#edf7ee; --green-50:#f4fbf4;
+      --gray-900:#111111;  --gray-600:#4a4a4a;  --gray-500:#6b7280;
+      --gray-400:#9ca3af;  --gray-200:#e5e7eb;  --gray-100:#f7f7f5;
+      --gray-50:#fafafa;   --bg-white:#ffffff;   --bg-gray:#f7f7f5;
+      --text-main:#4a4a4a; --text-heading:#111111; --brand-green:#1e5e24;
+      --brand-green-h:#16481b; --brand-orange:#1e5e24; --shadow-sm:0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md:0 8px 24px rgba(0,0,0,0.1);
     }
 
     html { scroll-behavior: smooth; }
@@ -42,14 +53,7 @@
     .mt-16 { margin-top: 4rem; }
     .hidden { display: none; }
     .page { display: none; } .page.active { display: block; }
-
-    /* Checker Band */
-    .checker-band {
-      height: 60px;
-      background: url('https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/8a12/07e9/-820/4-4511-8380-84764dd21fb9/image.jpg?se=2026-03-12T18%3A16%3A22Z&sp=r&sv=2026-02-06&sr=b&sig=vJWHIw8xWqA3I43rMnj%2BzRrZSyXzETILSaVOqx9Id44%3D') repeat-x;
-      background-size: auto 60px;
-      display: block;
-    }
+    .checker-band, .checker-accent, .section-heading-wrap { display: none; }
 
     /* ─────── NAVBAR ─────── */
     nav {
@@ -147,7 +151,7 @@
 
     /* ─────── HERO ─────── */
     .hero { position: relative; min-height: 92vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('https://i.imgur.com/76ZbOqt.png'); background-size: cover; background-position: center; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://i.imgur.com/P8AIoni.jpeg'); background-size: cover; background-position: center; }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.52) 50%, rgba(0,0,0,0.65) 100%); }
     .hero-content { position: relative; z-index: 10; text-align: center; padding: 2rem 1.5rem; max-width: 900px; width: 100%; }
     .hero-badge {
@@ -174,7 +178,7 @@
     .clients-section { padding: 2.5rem 1.5rem; background: #fff; border-bottom: 1px solid var(--border); }
     .clients-label { text-align: center; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #aaa; margin-bottom: 2rem; }
     .marquee-wrap { overflow: hidden; }
-    .marquee-track { display: flex; animation: marquee 48s linear infinite; width: calc(250px * 12); }
+    .marquee-track { display: flex; animation: marquee 24s linear infinite; width: calc(250px * 12); }
     @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
     .marquee-item { flex-shrink: 0; width: 250px; display: flex; align-items: center; justify-content: center; padding: 0 2rem; }
     .marquee-item img { height: 40px; width: auto; object-fit: contain; filter: grayscale(100%) opacity(0.45); transition: filter 0.3s; }
@@ -184,6 +188,7 @@
     /* ─────── SOLUTIONS CARDS ─────── */
     .solutions-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3.5rem; }
     @media(min-width:768px){ .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
+
     .solution-card {
       border-radius: 18px; border: 1.5px solid var(--border);
       padding: 2rem 1.75rem; background: #fff;
@@ -191,6 +196,7 @@
     }
     .solution-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.09); }
     .solution-card.featured { border-color: var(--green); border-width: 2px; }
+
     .badge-phare {
       display: inline-flex; align-items: center; gap: 0.35rem;
       background: var(--green); color: #fff; font-family: 'DM Sans', sans-serif;
@@ -214,8 +220,10 @@
 
     /* ─────── CUISINE DARK ─────── */
     .cuisine-section { background: var(--dark-section) !important; }
+
     .two-col { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
     @media(min-width:1024px){ .two-col { grid-template-columns: 1fr 1fr; gap: 5rem; } }
+
     .cuisine-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
     .cuisine-feature { display: flex; align-items: flex-start; gap: 0.75rem; }
     .cuisine-feature-icon {
@@ -225,16 +233,18 @@
     }
     .cuisine-feature-title { font-size: 0.875rem; font-weight: 600; color: #fff; font-family: 'DM Sans', sans-serif; }
     .cuisine-feature-sub { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-top: 0.1rem; }
+
     .menu-box-dark {
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
       border-radius: 16px; padding: 1.75rem; color: #fff;
     }
-    .menu-box-dark h4 { font-size: 1rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: rgba(255,255,255,0.85); margin-bottom: 1.25rem; }
+    .menu-box-dark h4 { font-size: 1rem; font-family: 'DM Sans', sans-serif; font-weight: 600; margin-bottom: 1.25rem; color: rgba(255,255,255,0.85); }
     .menu-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 0.75rem; }
     .menu-stat { text-align: center; }
     .menu-stat-num { font-size: 2rem; font-weight: 700; color: #6fcf73; font-family: 'DM Sans', sans-serif; line-height: 1; }
     .menu-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 0.25rem; }
     .menu-stat-note { font-size: 0.72rem; color: rgba(255,255,255,0.35); text-align: center; }
+
     .cuisine-img-wrap { position: relative; border-radius: 18px; overflow: hidden; }
     .cuisine-img-wrap img { width: 100%; height: 400px; object-fit: cover; }
     @media(min-width:1024px){ .cuisine-img-wrap img { height: 580px; } }
@@ -257,6 +267,17 @@
     .why-card h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 0.6rem; }
     .why-card p { font-size: 0.875rem; color: var(--gray-sub); line-height: 1.65; }
 
+    /* section "Pourquoi" — fond blanc, cards grises */
+    .section-dark-green { background: #fff; }
+    .section-dark-green .section-label { color: var(--green); }
+    .section-dark-green h2 { color: var(--dark) !important; }
+    .section-dark-green p { color: var(--gray-text) !important; }
+    .section-dark-green .why-card { background: var(--gray-bg); border-color: var(--border); }
+    .section-dark-green .why-card:hover { border-color: var(--green); }
+    .section-dark-green .why-card h3 { color: var(--dark); }
+    .section-dark-green .why-card p { color: var(--gray-sub) !important; }
+    .section-dark-green .icon-container { background: var(--green-lite); color: var(--green); }
+
     /* ─────── CTA ─────── */
     .cta-section { background: var(--green); text-align: center; }
     .cta-section h2 { font-size: clamp(1.6rem, 4vw, 2.75rem); color: #fff; line-height: 1.2; margin-bottom: 1.25rem; max-width: 44rem; margin-left: auto; margin-right: auto; }
@@ -268,26 +289,98 @@
     .page-header h1 { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--dark); max-width: 44rem; line-height: 1.1; margin-bottom: 1.25rem; }
     .page-header p { font-size: 1.05rem; color: var(--gray-sub); max-width: 38rem; line-height: 1.7; }
 
-    /* ─────── PAGE FRIGO ─────── */
-    .frigo-page-header { background: linear-gradient(135deg, #0e3810 0%, #1e5e24 60%, #2d7a32 100%); padding: 5rem 1.5rem 6rem; }
-    @media(min-width:768px){ .frigo-page-header { padding: 7rem 3rem; } }
-    .frigo-page-header .section-label { color: #a3d9a5; }
-    .frigo-page-header h1 { color: #fff; font-size: clamp(2rem,5vw,3.5rem); max-width:44rem; line-height:1.1; margin-bottom:1.25rem; }
-    .frigo-page-header p { color: rgba(255,255,255,0.78); font-size:1.05rem; max-width:38rem; line-height:1.7; }
-    .frigo-features-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin: 2.5rem 0; }
-    @media(min-width:640px){ .frigo-features-grid { grid-template-columns: 1fr 1fr; } }
-    .frigo-feature-card { background: var(--green-lite); border: 1.5px solid #c8e6c9; border-radius: 14px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
-    .frigo-feature-icon { width: 44px; height: 44px; background: var(--green); border-radius: 11px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
-    .frigo-feature-card h4 { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:700; color:var(--dark); margin-bottom:0.2rem; }
-    .frigo-feature-card p { font-size:0.82rem; color:var(--gray-sub); line-height:1.6; }
+    .solution-full-section { background: #fff; }
+    .solution-full-section.alt { background: var(--gray-bg); }
+    .solution-full-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+    @media(min-width:1024px){ .solution-full-grid { grid-template-columns: 1fr 1fr; gap: 5rem; } }
+    .solution-full-img { border-radius: 18px; overflow: hidden; order: 1; }
+    .solution-full-img.order-first { order: 0; }
+    @media(min-width:1024px){ .solution-full-img { order: initial !important; } }
+    .solution-full-img img { width: 100%; height: 320px; object-fit: cover; }
+    @media(min-width:1024px){ .solution-full-img img { height: 480px; } }
 
-    /* ─────── FONCTIONNEMENT FRIGO ─────── */
-    .fonctionnement-section { background: #f9fafb; padding: 4rem 2rem; text-align: center; }
-    .fonctionnement-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .step { display: flex; align-items: flex-start; gap: 1rem; text-align: left; }
-    .step-icon { font-size: 2.5rem; color: var(--green); }
-    .step-content h3 { font-size: 1.2rem; color: var(--dark); margin-bottom: 0.5rem; }
-    .step-content p { color: var(--gray-sub); font-size: 0.9rem; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+    .check-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--gray-text); }
+    .check-list li svg { color: var(--green); flex-shrink: 0; }
+
+    .menu-box-light { background: #fff; border-radius: 14px; padding: 1.5rem; border: 1.5px solid var(--border); margin-bottom: 2rem; }
+    .menu-box-light h4 { font-size: 1rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--dark); margin-bottom: 1rem; }
+    .menu-stat-green .menu-stat-num { color: var(--green); font-size: 1.5rem; }
+    .menu-stat-green .menu-stat-label { color: var(--gray-sub); font-size: 0.75rem; }
+
+    .tags-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+    .tag-green { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--green-lite); color: var(--green); font-size: 0.75rem; font-weight: 500; padding: 0.4rem 0.75rem; border-radius: 9999px; }
+
+    .prestation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .prestation-card { background: var(--gray-bg); border-radius: 12px; padding: 1.25rem; border: 1.5px solid var(--border); }
+    .prestation-card svg { color: var(--green); margin-bottom: 0.6rem; }
+    .prestation-card h4 { font-size: 0.875rem; font-weight: 600; color: var(--dark); margin-bottom: 0.25rem; font-family: 'DM Sans', sans-serif; }
+    .prestation-card p { font-size: 0.78rem; color: var(--gray-sub); }
+
+    /* ─────── ABOUT ─────── */
+    .about-story-text .space-y > p { color: var(--gray-sub); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+    .vision-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .vision-stat { background: var(--green); border-radius: 14px; padding: 1.5rem; }
+    .vision-stat .num { font-size: 1.5rem; font-weight: 700; color: #fff; font-family: 'DM Sans', sans-serif; margin-bottom: 0.2rem; }
+    .vision-stat .label { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+    .exigence-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 3.5rem; }
+    @media(min-width:768px){ .exigence-grid { grid-template-columns: repeat(3, 1fr); } }
+    .exigence-card { text-align: center; }
+    .exigence-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--green-lite); display: flex; align-items: center; justify-content: center; color: var(--green); margin: 0 auto 1.25rem; }
+    .exigence-card h3 { font-size: 1.2rem; color: var(--dark); margin-bottom: 0.6rem; }
+    .exigence-card p { font-size: 0.875rem; color: var(--gray-sub); line-height: 1.65; }
+
+    .about-section-alt { background: var(--gray-bg); }
+    .about-section-dark { background: #fff; }
+    .about-section-dark h2 { color: var(--dark) !important; }
+    .about-section-dark p { color: var(--gray-sub) !important; }
+    .about-section-dark .exigence-card h3 { color: var(--dark); }
+    .about-section-dark .exigence-icon { background: var(--green-lite); color: var(--green); }
+    .section-green-pale { background: var(--gray-bg); }
+
+    /* ─────── CONTACT ─────── */
+    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+    @media(min-width:1024px){ .contact-grid { grid-template-columns: 1fr 1fr; gap: 5rem; } }
+    .contact-info h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--dark); margin-bottom: 2rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .contact-item-label { font-size: 0.7rem; color: #aaa; margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'DM Sans', sans-serif; }
+    .contact-item-value { font-size: 1rem; font-weight: 600; color: var(--dark); font-family: 'DM Sans', sans-serif; }
+    .contact-item-value a { color: var(--dark); transition: color 0.2s; }
+    .contact-item-value a:hover { color: var(--green); }
+    .contact-why { background: var(--gray-bg); border-radius: 16px; padding: 1.5rem; border: 1.5px solid var(--border); margin-top: 2.5rem; }
+    .contact-why h3 { font-size: 1.05rem; color: var(--dark); margin-bottom: 1rem; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    .contact-why-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .contact-why-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; color: var(--gray-text); }
+    .contact-why-list li svg { color: var(--green); flex-shrink: 0; }
+
+    /* ─────── FORM ─────── */
+    .form-card { background: #fff; border-radius: 18px; border: 1.5px solid var(--border); padding: 2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    @media(min-width:640px){ .form-row { grid-template-columns: 1fr 1fr; } }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--dark); margin-bottom: 0.4rem; }
+    .form-label span { color: #e53e3e; }
+    .form-input, .form-textarea {
+      width: 100%; padding: 0.75rem 1rem; font-size: 0.875rem;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      background: #fff; color: var(--dark); font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: #bbb; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--green) !important; box-shadow: 0 0 0 3px rgba(30,94,36,0.1) !important; }
+    .form-textarea { resize: vertical; min-height: 140px; }
+    .form-error-msg { display: none; padding: 0.75rem 1rem; background: #fff5f5; border: 1px solid #fed7d7; border-radius: 10px; font-size: 0.85rem; color: #c53030; margin-bottom: 1rem; }
+    .form-error-msg.visible { display: block; }
+    .form-submit { width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.9rem 2rem; font-size: 1rem; font-weight: 600; color: #fff; background: var(--green); border-radius: 9999px; transition: background 0.2s; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
+    .form-submit:hover:not(:disabled) { background: var(--green-h); }
+    .form-submit:disabled { opacity: 0.55; cursor: not-allowed; }
+    .form-success { display: none; text-align: center; padding: 3rem 1rem; }
+    .form-success.visible { display: block; }
+    .form-success-icon { width: 64px; height: 64px; background: var(--green-lite); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--green); }
+    .form-success h3 { font-size: 1.5rem; color: var(--dark); margin-bottom: 0.75rem; }
+    .form-success p { font-size: 0.875rem; color: var(--gray-sub); }
 
     /* ─────── FOOTER ─────── */
     footer { background: #0d0d0d; color: #fff; }
@@ -310,6 +403,19 @@
     .footer-contact-item a:hover { color: #fff; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 1.25rem 1.5rem; }
     .footer-bottom p { color: #444; font-size: 0.75rem; text-align: center; }
+
+    /* ─────── PAGE FRIGO ─────── */
+    .frigo-page-header { background: linear-gradient(135deg, #0e3810 0%, #1e5e24 60%, #2d7a32 100%); padding: 5rem 1.5rem 6rem; }
+    @media(min-width:768px){ .frigo-page-header { padding: 7rem 3rem; } }
+    .frigo-page-header .section-label { color: #a3d9a5; }
+    .frigo-page-header h1 { color: #fff; font-size: clamp(2rem,5vw,3.5rem); max-width:44rem; line-height:1.1; margin-bottom:1.25rem; }
+    .frigo-page-header p { color: rgba(255,255,255,0.78); font-size:1.05rem; max-width:38rem; line-height:1.7; }
+    .frigo-features-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin: 2.5rem 0; }
+    @media(min-width:640px){ .frigo-features-grid { grid-template-columns: 1fr 1fr; } }
+    .frigo-feature-card { background: var(--green-lite); border: 1.5px solid #c8e6c9; border-radius: 14px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .frigo-feature-icon { width: 44px; height: 44px; background: var(--green); border-radius: 11px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
+    .frigo-feature-card h4 { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:700; color:var(--dark); margin-bottom:0.2rem; }
+    .frigo-feature-card p { font-size:0.82rem; color:var(--gray-sub); line-height:1.6; }
 
     /* ─────── SPINNER ─────── */
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -379,8 +485,8 @@
           Demander un devis
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
-        <button class="btn-outline-white" onclick="navigate('frigo')">
-          En savoir + sur le frigo connecté
+        <button class="btn-outline-white" onclick="navigate('solutions')">
+          Découvrir nos solutions
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
       </div>
@@ -415,7 +521,7 @@
     </div>
   </div>
 
-  <!-- SOLUTIONS -->
+  <!-- SOLUTIONS — fond gris -->
   <section style="background:#fff;">
     <div class="max-w-7xl px-container">
       <div class="text-center">
@@ -433,7 +539,7 @@
           </div>
           <h3>Frigo Connecté</h3>
           <p>Cantine digitale autonome avec produits frais renouvelés quotidiennement. Solution clé en main 24h/24.</p>
-          <button class="link-green" onclick="navigate('frigo')">
+          <button class="link-green" onclick="navigate('solutions')">
             En savoir plus
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
@@ -464,7 +570,7 @@
     </div>
   </section>
 
-  <!-- CUISINE -->
+  <!-- CUISINE — fond blanc -->
   <section class="cuisine-section">
     <div class="max-w-7xl px-container">
       <div class="two-col">
@@ -793,11 +899,11 @@
 <!-- ==================== PAGE CONTACT ==================== -->
 <div class="page" id="page-contact">
 
-  <div class="page-header" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.imgur.com/76ZbOqt.png'); background-size: cover; background-position: center; color: #fff;">
+  <div class="page-header">
     <div class="max-w-7xl px-container">
-      <span class="section-label" style="color: #fff;">Contact</span>
-      <h1 style="color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Parlons de votre projet</h1>
-      <p style="color: rgba(255,255,255,0.9); text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Notre équipe est à votre écoute pour étudier vos besoins et vous proposer la solution la plus adaptée.</p>
+      <span class="section-label">Contact</span>
+      <h1>Parlons de votre projet</h1>
+      <p>Notre équipe est à votre écoute pour étudier vos besoins et vous proposer la solution la plus adaptée.</p>
     </div>
   </div>
 
@@ -824,15 +930,6 @@
             <div>
               <div class="contact-item-label">Zone d'intervention</div>
               <div class="contact-item-value">Seine-Maritime (76)</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="icon-container" style="flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div>
-              <div class="contact-item-label">Téléphone</div>
-              <div class="contact-item-value"><a href="tel:0666699271">06 66 69 92 71</a></div>
             </div>
           </div>
           <div class="contact-why">
@@ -901,6 +998,8 @@
 
 </div>
 
+</div><!-- end flex -->
+
 <!-- ==================== PAGE FRIGO CONNECTÉ ==================== -->
 <div class="page" id="page-frigo">
 
@@ -919,8 +1018,8 @@
           Demander une étude gratuite
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
-        <a href="#frigo-fonctionnement" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.875rem 2rem;border:1px solid rgba(255,255,255,0.35);border-radius:9999px;color:rgba(255,255,255,0.9);font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;backdrop-filter:blur(4px);">
-          Comment ça fonctionne ?
+        <a href="#frigo-faq" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.875rem 2rem;border:1px solid rgba(255,255,255,0.35);border-radius:9999px;color:rgba(255,255,255,0.9);font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;cursor:pointer;backdrop-filter:blur(4px);">
+          Questions fréquentes
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </a>
       </div>
@@ -955,37 +1054,114 @@
     </div>
   </section>
 
-  <!-- FONCTIONNEMENT -->
-  <section id="frigo-fonctionnement" class="fonctionnement-section">
+  <!-- 4 AVANTAGES style ancien site -->
+  <section style="background:#eef5ee;">
     <div class="max-w-7xl px-container">
-      <h2>Comment ça fonctionne ?</h2>
-      <div class="fonctionnement-grid">
-        <div class="step">
-          <div class="step-icon">💳</div>
-          <div class="step-content">
-            <h3>1. Déverrouillage</h3>
-            <p>Passez votre carte bancaire ou ticket restaurant devant le capteur.</p>
+      <div class="text-center" style="margin-bottom:3rem;">
+        <span class="section-label">Pourquoi nous choisir ?</span>
+        <h2 style="font-size:clamp(1.75rem,4vw,2.5rem); color:var(--gray-900);">4 bonnes raisons de passer au frigo connecté</h2>
+        <div style="width:48px; height:3px; background:#004A05; margin:1rem auto 0;"></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
+        <div class="why-card" style="text-align:center;">
+          <div class="icon-container" style="margin:0 auto 1rem; background:#004A05; color:#fff;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.5rem;">La disponibilité</h3>
+          <ul style="list-style:none; color:var(--gray-500); font-size:0.875rem; line-height:1.8;">
+            <li>24h/24</li>
+            <li>7j/7</li>
+          </ul>
         </div>
-        <div class="step">
-          <div class="step-icon">🍱</div>
-          <div class="step-content">
-            <h3>2. Choix libre</h3>
-            <p>Ouvrez le frigo et sélectionnez vos plats et boissons.</p>
+        <div class="why-card" style="text-align:center;">
+          <div class="icon-container" style="margin:0 auto 1rem; background:#004A05; color:#fff;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
           </div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.5rem;">Le Paiement</h3>
+          <ul style="list-style:none; color:var(--gray-500); font-size:0.875rem; line-height:1.8;">
+            <li>Carte bancaire</li>
+            <li>Carte déjeuner</li>
+          </ul>
         </div>
-        <div class="step">
-          <div class="step-icon">✅</div>
-          <div class="step-content">
-            <h3>3. Validation auto</h3>
-            <p>Fermez la porte : votre achat est validé et débité automatiquement.</p>
+        <div class="why-card" style="text-align:center;">
+          <div class="icon-container" style="margin:0 auto 1rem; background:#004A05; color:#fff;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
           </div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.5rem;">La Qualité</h3>
+          <ul style="list-style:none; color:var(--gray-500); font-size:0.875rem; line-height:1.8;">
+            <li>Produits frais sélectionnés</li>
+            <li>par nos soins</li>
+          </ul>
         </div>
-        <div class="step">
-          <div class="step-icon">☕</div>
-          <div class="step-content">
-            <h3>4. Profitez !</h3>
-            <p>Bon appétit, la pause est à vous.</p>
+        <div class="why-card" style="text-align:center;">
+          <div class="icon-container" style="margin:0 auto 1rem; background:#004A05; color:#fff;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8C8 10 5.9 16.17 3.82 19.82A2 2 0 0 0 5.56 22h12.88a2 2 0 0 0 1.74-2.18C19.61 16.17 17.5 10 17 8z"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.5rem;">La Fraîcheur</h3>
+          <ul style="list-style:none; color:var(--gray-500); font-size:0.875rem; line-height:1.8;">
+            <li>Livraison tous les matins</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ONGLETS -->
+  <section id="frigo-faq" style="background:#fff;">
+    <div class="max-w-7xl px-container">
+      <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+        <div style="max-width:700px; margin:0 auto; width:100%;">
+          <p style="text-align:center; color:#004A05; font-style:italic; font-size:0.95rem; margin-bottom:0.5rem;">"Pas de secret entre nous..."</p>
+          <h2 style="text-align:center; font-size:clamp(1.5rem,4vw,2.25rem); color:var(--gray-900); margin-bottom:0.5rem;">Le coin des questions / réponses</h2>
+          <div style="width:48px; height:3px; background:#004A05; margin:0.75rem auto 2.5rem;"></div>
+
+          <!-- Onglets -->
+          <div style="display:flex; gap:0.75rem; margin-bottom:1.5rem; flex-wrap:wrap;" id="faqTabs">
+            <button onclick="showFaqTab('lefrigo')" id="tab-lefrigo" style="flex:1; min-width:140px; padding:0.75rem 1.25rem; border-radius:0.75rem; font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:600; cursor:pointer; transition:all 0.2s; background:#004A05; color:#fff; border:1px solid #004A05;">Le Frigo</button>
+            <button onclick="showFaqTab('fonctionnement')" id="tab-fonctionnement" style="flex:1; min-width:140px; padding:0.75rem 1.25rem; border-radius:0.75rem; font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:600; cursor:pointer; transition:all 0.2s; background:#f3f4f6; color:#4b5563; border:1px solid #e5e7eb;">Fonctionnement</button>
+            <button onclick="showFaqTab('connectivite')" id="tab-connectivite" style="flex:1; min-width:140px; padding:0.75rem 1.25rem; border-radius:0.75rem; font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:600; cursor:pointer; transition:all 0.2s; background:#f3f4f6; color:#4b5563; border:1px solid #e5e7eb;">Connectivité</button>
+          </div>
+
+          <!-- Contenu onglet Le Frigo -->
+          <div id="faq-lefrigo" class="faq-panel" style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:1rem; padding:1.75rem;">
+            <div style="margin-bottom:1.5rem;">
+              <strong style="color:var(--gray-900); display:block; margin-bottom:0.75rem;">Dimensions et Consommation :</strong>
+              <ul style="list-style:disc; padding-left:1.25rem; color:var(--gray-600); font-size:0.9rem; line-height:1.8;">
+                <li>Encombrement : Largeur 122cm × Profondeur 80cm × Hauteur 200cm</li>
+                <li>Consommation : 5 kWh</li>
+              </ul>
+            </div>
+            <div style="margin-bottom:1.5rem;">
+              <strong style="color:var(--gray-900); display:block; margin-bottom:0.75rem;">Maintenance et Service Technique :</strong>
+              <ul style="list-style:disc; padding-left:1.25rem; color:var(--gray-600); font-size:0.9rem; line-height:1.8;">
+                <li>Notre fournisseur garantit le parfait fonctionnement de nos appareils en assurant la maintenance et le service technique.</li>
+              </ul>
+            </div>
+            <div>
+              <strong style="color:var(--gray-900); display:block; margin-bottom:0.75rem;">Réapprovisionnement :</strong>
+              <ul style="list-style:disc; padding-left:1.25rem; color:var(--gray-600); font-size:0.9rem; line-height:1.8;">
+                <li>Le nettoyage des frigos et la livraison des produits sont assurés tous les matins dans le but de garantir la fraîcheur et la qualité de nos plats.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contenu onglet Fonctionnement -->
+          <div id="faq-fonctionnement" class="faq-panel" style="display:none; background:#f9fafb; border:1px solid #e5e7eb; border-radius:1rem; padding:1.75rem;">
+            <strong style="color:var(--gray-900); display:block; margin-bottom:0.75rem;">En toute simplicité :</strong>
+            <ul style="list-style:disc; padding-left:1.25rem; color:var(--gray-600); font-size:0.9rem; line-height:2;">
+              <li>Un système de balance connectée détecte les produits présents dans le frigo.</li>
+              <li>Vous déverrouillez la porte avec une carte, choisissez vos produits, et terminez en refermant la porte.</li>
+              <li>Vos achats sont automatiquement facturés.</li>
+              <li>Vous n'avez plus qu'à savourer !</li>
+            </ul>
+          </div>
+
+          <!-- Contenu onglet Connectivité -->
+          <div id="faq-connectivite" class="faq-panel" style="display:none; background:#f9fafb; border:1px solid #e5e7eb; border-radius:1rem; padding:1.75rem;">
+            <strong style="color:var(--gray-900); display:block; margin-bottom:0.75rem;">Vous avez le choix :</strong>
+            <ul style="list-style:disc; padding-left:1.25rem; color:var(--gray-600); font-size:0.9rem; line-height:2;">
+              <li>Nos frigos sont équipés d'une prise Ethernet (RJ45) et, si nécessaire, peuvent être complétés d'un modem 4G afin de s'adapter à son futur emplacement.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1056,10 +1232,6 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Seine-Maritime (76)
           </div>
-          <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:0666699271">06 66 69 92 71</a>
-          </div>
         </div>
       </div>
     </div>
@@ -1091,7 +1263,6 @@
     document.getElementById('menuIcon').classList.remove('hidden');
     document.getElementById('closeIcon').classList.add('hidden');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    window.history.pushState({ page: page }, '', `#${page}`);
     return false;
   }
 
@@ -1104,14 +1275,22 @@
     closeIcon.classList.toggle('hidden');
   }
 
-  // Gestion du retour en arrière
-  window.addEventListener('popstate', function(e) {
-    if (e.state && e.state.page) {
-      navigate(e.state.page);
-    } else {
-      navigate('accueil');
-    }
-  });
+  // ===== FAQ TABS =====
+  function showFaqTab(tab) {
+    const panels = document.querySelectorAll('.faq-panel');
+    panels.forEach(p => p.style.display = 'none');
+    const tabs = document.querySelectorAll('#faqTabs button');
+    tabs.forEach(t => {
+      t.style.background = '#f3f4f6';
+      t.style.color = '#4b5563';
+      t.style.borderColor = '#e5e7eb';
+    });
+    document.getElementById('faq-' + tab).style.display = 'block';
+    const activeTab = document.getElementById('tab-' + tab);
+    activeTab.style.background = '#004A05';
+    activeTab.style.color = '#fff';
+    activeTab.style.borderColor = '#004A05';
+  }
 
   // ===== FORMSPREE =====
   const form = document.getElementById('contactForm');
