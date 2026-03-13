@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,7 +8,7 @@
   <meta name="theme-color" content="#14532d" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -57,35 +55,20 @@
     .page { display: none; } .page.active { display: block; }
     .checker-band, .checker-accent, .section-heading-wrap { display: none; }
 
-    /* ── Damier header ── */
-    .nav-checker {
-      height: 10px;
-      background-image:
-        linear-gradient(to right, var(--green) 0px, var(--green) 10px, transparent 10px, transparent 20px);
-      background-size: 20px 5px;
-      background-position: 0 0, 0 5px;
-      background-repeat: repeat-x;
-      background-color: #fff;
-    }
-    .nav-checker-bottom {
-      height: 10px;
-      background-image:
-        linear-gradient(to right, transparent 0px, transparent 10px, var(--green) 10px, var(--green) 20px);
-      background-size: 20px 5px;
-      background-position: 0 0, 0 5px;
-      background-repeat: repeat-x;
-      background-color: #fff;
-    }
-
-    /* ─────── NAVBAR ─────── */
+    /* ─────── NAVBAR vert uni ─────── */
     nav {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(30,94,36,0.80);
+      backdrop-filter: blur(8px);
+      border-bottom: none;
     }
+    /* Logo texte visible sur damier */
+    .nav-logo-name { color: #fff !important; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-    .nav-logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
-    .nav-logo img { height: 46px; width: auto; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px; cursor: pointer;
+    }
+    .nav-logo img { height: 46px; width: auto; filter: brightness(0) invert(1); }
     .nav-logo-name {
       font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--dark);
       letter-spacing: -0.01em;
@@ -93,11 +76,16 @@
     .nav-links-desktop { display: none; align-items: center; gap: 2.5rem; }
     @media(min-width:768px){ .nav-links-desktop { display: flex; } }
     .nav-link {
-      font-size: 0.9rem; font-weight: 500; color: var(--gray-sub);
-      transition: color 0.2s; cursor: pointer; background: none; border: none;
-      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem; font-weight: 600; color: var(--green);
+      cursor: pointer; border: none; font-family: 'DM Sans', sans-serif;
+      background: #fff;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.22);
+      transition: background 0.2s, color 0.2s, transform 0.15s;
     }
-    .nav-link:hover, .nav-link.active { color: var(--dark); font-weight: 600; }
+    .nav-link:hover { background: #f5fdf5; color: var(--green-h); transform: translateY(-1px); }
+    .nav-link.active { background: #fff; color: var(--green); font-weight: 700; border-bottom: 2px solid var(--green); }
     .nav-cta {
       display: inline-flex; align-items: center; justify-content: center;
       padding: 0.65rem 1.5rem; font-size: 0.875rem; font-weight: 600;
@@ -109,11 +97,12 @@
     .nav-socials { display: none; align-items: center; gap: 0.4rem; }
     @media(min-width:768px){ .nav-socials { display: flex; } }
     .nav-social-link {
-      width: 30px; height: 30px; border-radius: 7px; background: var(--green-lite);
+      width: 32px; height: 32px; border-radius: 7px; background: #fff;
       display: flex; align-items: center; justify-content: center;
       color: var(--green); transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.22);
     }
-    .nav-social-link:hover { background: var(--green); color: #fff; }
+    .nav-social-link:hover { background: #f5fdf5; color: var(--green-h); }
     .nav-mobile-btn { display: flex; align-items: center; padding: 8px; color: var(--gray-sub); background: none; border: none; cursor: pointer; }
     @media(min-width:768px){ .nav-mobile-btn { display: none; } }
     .nav-mobile-menu { display: none; background: #fff; border-top: 1px solid var(--border); padding: 0.75rem 1.5rem 1.25rem; }
@@ -174,7 +163,7 @@
     /* ─────── HERO ─────── */
     .hero { position: relative; min-height: 92vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background-image: url('https://i.imgur.com/76ZbOqt.png'); background-size: cover; background-position: center; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.52) 50%, rgba(0,0,0,0.65) 100%); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.42) 50%, rgba(0,0,0,0.55) 100%); }
     .hero-content { position: relative; z-index: 10; text-align: center; padding: 2rem 1.5rem; max-width: 900px; width: 100%; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -440,6 +429,15 @@
     .frigo-feature-card h4 { font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:700; color:var(--dark); margin-bottom:0.2rem; }
     .frigo-feature-card p { font-size:0.82rem; color:var(--gray-sub); line-height:1.6; }
 
+
+    /* ── Légumes décoratifs ── */
+    .veg-deco {
+      position: absolute;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .veg-deco svg { display: block; }
     /* ─────── SPINNER ─────── */
     @keyframes spin { to { transform: rotate(360deg); } }
     .animate-spin { animation: spin 1s linear infinite; }
@@ -449,7 +447,6 @@
 <body>
 
 <!-- ===== NAVBAR ===== -->
-<div class="nav-checker" aria-hidden="true"></div>
 <nav>
   <div class="max-w-7xl px-container">
     <div class="nav-inner">
@@ -487,7 +484,6 @@
     <button class="nav-mobile-cta" onclick="navigate('contact')">Contactez-nous</button>
   </div>
 </nav>
-<div class="nav-checker-bottom" aria-hidden="true"></div>
 
 <div class="flex flex-col flex-1">
 
@@ -503,7 +499,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
         Traiteur d'entreprise nouvelle génération
       </div>
-      <h1>La restauration<br class="hidden sm:block" /> d'entreprise, <em>réinventée.</em></h1>
+      <h1 style="color:#fff;">La restauration<br class="hidden sm:block" /> d'entreprise, <em style="color:#6fcf73; font-style:italic;">réinventée.</em></h1>
       <p class="hero-sub">Cantine digitale, plateaux repas et prestations sur-mesure. Offrez à vos collaborateurs une expérience culinaire premium.</p>
       <div class="hero-btns">
         <button class="btn-cta" onclick="navigate('contact')">
@@ -554,7 +550,23 @@
   </div>
 
   <!-- SOLUTIONS — fond gris -->
-  <section style="background:#fff;">
+  <section style="background:#fff; position:relative; overflow:hidden;">
+    <!-- légumes déco -->
+    <div class="veg-deco" style="top:20px;left:10px;width:130px;transform:rotate(-15deg);"><svg viewBox="0 0 60 80" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 18 Q38 35 35 55 Q32 68 30 72 Q28 68 25 55 Q22 35 30 18Z"/>
+  <path d="M30 18 C28 10, 22 6, 18 4"/>
+  <path d="M30 18 C30 10, 28 4, 26 2"/>
+  <path d="M30 18 C32 10, 36 6, 38 3"/>
+  <path d="M27 35 Q24 38 23 42"/>
+  <path d="M33 40 Q36 43 36 47"/>
+</svg></div>
+    <div class="veg-deco" style="bottom:20px;right:15px;width:115px;transform:rotate(20deg);"><svg viewBox="0 0 70 70" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="35" cy="42" r="22"/>
+  <path d="M35 20 C35 14, 33 8, 30 5"/>
+  <path d="M35 20 C38 13, 42 9, 45 8"/>
+  <path d="M35 20 C32 13, 28 10, 24 10"/>
+  <path d="M25 38 Q28 32 35 30 Q42 32 45 38"/>
+</svg></div>
     <div class="max-w-7xl px-container">
       <div class="text-center">
         <span class="section-label">Nos Solutions</span>
@@ -650,7 +662,21 @@
   </section>
 
   <!-- POURQUOI NOUS CHOISIR -->
-  <section class="section-dark-green">
+  <section class="section-dark-green" style="position:relative; overflow:hidden;">
+    <div class="veg-deco" style="top:30px;right:20px;width:140px;transform:rotate(10deg);"><svg viewBox="0 0 65 80" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M32 20 Q20 22 16 36 Q12 52 20 62 Q28 72 32 72 Q36 72 44 62 Q52 52 48 36 Q44 22 32 20Z"/>
+  <path d="M32 20 C32 13, 34 8, 33 4"/>
+  <path d="M33 4 C36 2, 40 4, 40 8"/>
+  <path d="M22 40 Q26 34 32 34 Q38 34 42 40"/>
+  <path d="M20 52 Q26 58 32 58 Q38 58 44 52"/>
+</svg></div>
+    <div class="veg-deco" style="bottom:30px;left:10px;width:120px;transform:rotate(-20deg);"><svg viewBox="0 0 80 55" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 30 Q20 15 45 18 Q65 20 70 28 Q65 42 45 40 Q20 42 10 30Z"/>
+  <path d="M10 30 C5 26, 4 20, 6 15 C8 12, 12 12, 14 15"/>
+  <path d="M25 22 Q28 18 32 20"/>
+  <path d="M40 20 Q44 16 48 19"/>
+  <path d="M30 35 Q34 38 38 36"/>
+</svg></div>
     <div class="max-w-7xl px-container">
       <div class="text-center">
         <span class="section-label">Pourquoi Nous Choisir</span>
@@ -847,7 +873,20 @@
   </div>
 
   <!-- HISTOIRE -->
-  <section style="background:#fff;">
+  <section style="background:#fff; position:relative; overflow:hidden;">
+    <div class="veg-deco" style="bottom:20px;left:5px;width:110px;transform:rotate(15deg);"><svg viewBox="0 0 60 70" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 65 L30 35"/>
+  <path d="M30 50 C22 44, 14 40, 12 32 C16 28, 24 32, 30 42"/>
+  <path d="M30 42 C38 36, 46 30, 48 22 C44 18, 36 22, 30 34"/>
+  <path d="M30 34 C26 26, 22 18, 24 10 C28 8, 34 14, 32 26"/>
+</svg></div>
+    <div class="veg-deco" style="top:20px;right:10px;width:115px;transform:rotate(-10deg);"><svg viewBox="0 0 65 75" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M32 22 Q48 25 52 42 Q54 55 32 60 Q10 55 12 42 Q16 25 32 22Z"/>
+  <path d="M32 22 C32 15, 30 8, 28 4"/>
+  <path d="M32 22 C34 14, 36 8, 34 4"/>
+  <path d="M22 38 Q26 32 32 30 Q38 32 42 38"/>
+  <path d="M20 46 Q26 52 32 52 Q38 52 44 46"/>
+</svg></div>
     <div class="max-w-7xl px-container">
       <div class="two-col">
         <div class="about-story-text">
@@ -859,8 +898,17 @@
             <p>Nous accompagnons désormais les entreprises de Seine-Maritime avec la même exigence, la même passion et la même volonté d'apporter du bon dans le quotidien des collaborateurs.</p>
           </div>
         </div>
-        <div class="solution-full-img">
-          <img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/x9zvsrqv_Photo%20jeanine.jpg" alt="Jeanine" />
+        <div style="position:relative;">
+          <!-- Annotation manuscrite -->
+          <div style="position:absolute; top:-3.5rem; left:50%; transform:translateX(-20%); z-index:10; pointer-events:none; width:320px;">
+            <svg viewBox="0 0 260 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;overflow:visible;">
+              <text x="20" y="28" font-family="Caveat, cursive" font-size="26" font-weight="700" fill="#1e5e24" transform="rotate(-3, 20, 28)">Notre grand-mère</text>
+              <text x="50" y="58" font-family="Caveat, cursive" font-size="28" font-weight="700" fill="#1e5e24" transform="rotate(-2, 50, 58)">Jeanine</text>
+            </svg>
+          </div>
+          <div class="solution-full-img" style="margin-top:2rem;">
+            <img src="https://customer-assets.emergentagent.com/job_0f798c47-0f5e-477f-a923-5a9fe0acedec/artifacts/x9zvsrqv_Photo%20jeanine.jpg" alt="Jeanine" />
+          </div>
         </div>
       </div>
     </div>
@@ -940,7 +988,22 @@
     </div>
   </div>
 
-  <section style="background:#fff;">
+  <section style="background:#fff; position:relative; overflow:hidden;">
+    <div class="veg-deco" style="top:15px;right:8px;width:115px;transform:rotate(12deg);"><svg viewBox="0 0 60 72" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 24 Q42 26 46 38 Q48 50 30 56 Q12 50 14 38 Q18 26 30 24Z"/>
+  <path d="M30 24 C30 16, 28 10, 26 6"/>
+  <path d="M28 16 Q24 12 22 8"/>
+  <path d="M32 16 Q36 12 38 8"/>
+  <path d="M22 40 Q26 36 30 36 Q34 36 38 40"/>
+</svg></div>
+    <div class="veg-deco" style="bottom:15px;left:8px;width:110px;transform:rotate(-8deg);"><svg viewBox="0 0 60 72" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="30" cy="40" r="18"/>
+  <path d="M30 22 C30 14, 28 8, 26 4"/>
+  <path d="M30 22 C32 14, 34 8, 36 4"/>
+  <path d="M26 4 Q22 2, 20 4"/>
+  <path d="M30 58 L30 68 Q28 70 26 68"/>
+  <path d="M22 38 Q26 34 30 34 Q34 34 38 38"/>
+</svg></div>
     <div class="max-w-7xl px-container">
       <div class="contact-grid">
 
@@ -1235,7 +1298,21 @@
   </section>
 
   <!-- FAQ ONGLETS -->
-  <section id="frigo-faq" style="background:#fff;">
+  <section id="frigo-faq" style="background:#fff; position:relative; overflow:hidden;">
+    <div class="veg-deco" style="top:20px;left:8px;width:120px;transform:rotate(-12deg);"><svg viewBox="0 0 65 70" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <path d="M18 38 Q12 28 16 18 Q22 8 32 8 Q42 8 48 18 Q52 28 46 38Z"/>
+  <path d="M22 38 L22 55 Q22 60 28 60 L36 60 Q42 60 42 55 L42 38"/>
+  <path d="M22 48 Q32 52 42 48"/>
+  <path d="M24 22 Q28 18 32 20"/>
+  <path d="M36 16 Q40 18 42 22"/>
+</svg></div>
+    <div class="veg-deco" style="bottom:20px;right:8px;width:115px;transform:rotate(18deg);"><svg viewBox="0 0 70 70" fill="none" stroke="#1e5e24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="35" cy="42" r="22"/>
+  <path d="M35 20 C35 14, 33 8, 30 5"/>
+  <path d="M35 20 C38 13, 42 9, 45 8"/>
+  <path d="M35 20 C32 13, 28 10, 24 10"/>
+  <path d="M25 38 Q28 32 35 30 Q42 32 45 38"/>
+</svg></div>
     <div class="max-w-7xl px-container">
       <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
         <div style="max-width:700px; margin:0 auto; width:100%;">
@@ -1394,7 +1471,7 @@
 
   function navigate(page, addHistory = true) {
     if (addHistory) {
-      history.pushState({ page }, '', '#' + page);
+      try { history.pushState({ page }, '', '#' + page); } catch(e) {}
     }
     showPage(page);
     return false;
@@ -1407,10 +1484,12 @@
   });
 
   // Initial state
-  const initialHash = location.hash.replace('#', '');
-  const initialPage = pages.includes(initialHash) ? initialHash : 'accueil';
-  history.replaceState({ page: initialPage }, '', '#' + initialPage);
-  if (initialPage !== 'accueil') showPage(initialPage);
+  try {
+    const initialHash = location.hash.replace('#', '');
+    const initialPage = pages.includes(initialHash) ? initialHash : 'accueil';
+    history.replaceState({ page: initialPage }, '', '#' + initialPage);
+    if (initialPage !== 'accueil') showPage(initialPage);
+  } catch(e) {}
 
   function toggleMobile() {
     const menu = document.getElementById('mobileMenu');
