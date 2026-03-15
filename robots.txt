@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lacuisinedejeanine.fr/sitemap.xml
+
+# Bloquer les ressources non nécessaires à l'indexation
+Disallow: /api/
+Disallow: /*.json$
